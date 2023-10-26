@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         webView = findViewById(R.id.webView);
-
         WebSettings webSettings = webView.getSettings();
 
         webSettings.setJavaScriptEnabled(true);
@@ -37,6 +36,12 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Ingresa una URL válida",Toast.LENGTH_SHORT).show();
         } else {
             webView.loadUrl(url);
+        }
+    }
+
+    private class JavaScriptInterface{
+        @android.webkit.JavascriptInterface
+        public void showToast(String message){
         }
     }
 }
